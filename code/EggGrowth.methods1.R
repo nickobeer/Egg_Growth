@@ -233,12 +233,11 @@ print(results12WF)
 
 
 #==== 13.  Grab the temperature file and examine
-# NOTE: reddyear is a dummy value and could be any legitimate year
 # Setting raw=temperature will recover this file
-string13 <- paste0(base,"?raw=temperature&reddyear=2020&tempsource=userdirN1&temfile=sine.temp.sample.csv")
+string13 <- paste0(base,"?raw=temperature&tempsource=userdirN1&temfile=sine.temp.sample.csv")
 result13 <- as.data.frame(read_csv(string13))
 print(head(result13))
-plot(result13$Day,result13$Tem10,type="line",xlab="Day of Year",ylab="Temperature (C)")
+plot(result13$Day,result13$Tem10,type="l",xlab="Day of Year",ylab="Temperature (C)")
 lines(result13$Day,result13$Tem11,col=2)
 lines(result13$Day,result13$Tem12,col=3)
 lines(result13$Day,result13$Tem13,col=4)
